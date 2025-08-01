@@ -1,0 +1,268 @@
+# List -> [], hetero, duplication, indexing
+
+# empty list
+nothing = []
+print(nothing)
+
+# homo list
+colors = ['red', 'green', 'blue', 'yellow']
+print(colors)
+
+# hetero list
+mixed_doubles = ["Yug", 20, "Anamika", 22]
+print(mixed_doubles)
+
+# duplication
+fruits = ["apple", "orange", "pear", "pear"]
+print(fruits)
+
+
+# indexing (+ve, -ve), Slicing
+numbers = [10, 20, 30, 40, 50]
+print(numbers[-1])
+print(numbers[::-1])
+
+# Functions
+# to add elements
+
+numbers.append(100)
+print(numbers)
+
+numbers.insert(2, 200)
+print(numbers)
+
+numbers.extend("hi")
+print(numbers)
+
+numbers.extend([600, 700, 800])
+print(numbers)
+
+# to remove elements
+
+numbers.remove(600)
+print(numbers)
+
+# pop with index
+numbers.pop(1)
+print(numbers)
+
+# pop without index
+numbers.pop()
+print(numbers)
+
+numbers.clear()
+print(numbers)
+
+# del numbers
+# print(numbers)
+
+# List Within List
+
+sublist = [
+            [1,2,3],
+            [10, 20, 30]
+          ]
+
+print(sublist[1])
+print(sublist[1][1])
+
+print("Printing cols")
+for rows in sublist:
+    for cols in rows:
+        print(cols*3)
+
+colors = ['red', 'green', 'blue', 'yellow']
+fruits = ["apple", "orange", "pear", "pear"]
+
+# Concat
+combined_list = colors + fruits
+print(combined_list)
+
+nums1 = [1,2,3,4,5]
+nums2 = [10, 20, 30, 40, 50]
+
+final_nums_result = []
+
+for index in range(0,5):
+   final_nums_result.append(nums1[index] + nums2[index])
+
+print(final_nums_result)
+
+
+# List Comprehensions
+
+final_nums_result2 = [nums1[index] + nums2[index] for index in range(0,5)]
+print(final_nums_result2)
+
+multiple_of_two = [element * 2 for element in nums1]
+print(multiple_of_two)
+
+
+list1 = [10, 20, 30, 40, 50]
+list2 = list1  # pass by reference
+print(list1)
+print(list2)
+
+list2[0] = 99
+print(list1)
+print(list2)
+
+list3 = [10, 20, 30, 40, 50]
+list4 = list3.copy()  # pass by value
+print(list3)
+print(list4)
+
+list4[0] = 88
+print(list3)
+print(list4)
+
+
+
+---------------
+
+# tuple -> (), indexing, slicing, duplication, immutable
+
+tup1 = ()
+print(type(tup1))
+print(tup1)
+
+colors = ("red", "green", "blue", "blue")
+print(colors)
+print(colors[0][-1])
+
+nums = (10)
+print(nums)
+print(type(nums))
+
+nums2 = (20,)
+print(nums2)
+print(type(nums2))
+
+# functions
+print(colors.index("blue"))
+
+print("Multi index for same value")
+for element in colors:
+    if "blue" in element:
+        print(colors.index(element))
+		
+colors = ("red", "green", "blue", "blue")
+
+for index in range(len(colors)):
+    if colors[index]=="blue":
+      print(f"Index:{index} , value = {colors[index]}")
+	  
+	  
+-----------------
+
+# dictionary => {}, key:values
+
+# Dic creation types
+empty_dic = {}
+print(empty_dic)
+print(type(empty_dic))
+
+about_person = {"name" : "Anamika","sname": "anmaikaSname"}
+print(about_person)
+print(about_person["sname"])
+
+
+address = {226005 : "Lucknow", 3.14:"pie"}
+print(address)
+print(address[226005 ])
+
+student_ids = {(101,102,103) : "Akhislesh"}
+print(student_ids)
+print(student_ids[(101,102,103)])
+
+
+fruits = {"mango" : ["Yellow", "2kg"], "Banana" : {"Color" : ["Green", "red"]}}
+fruits["Banana"]["Color"][1] = "yellow"
+print(fruits)
+
+
+# functions
+
+students = {"name" : ["A", "B", "C", "D"], "age" : [10, 20, 30, 40]}
+print(students)
+
+sid = {"ids" :[101, 102, 103, 104]}
+
+# to add key: value we use update
+students.update(sid)
+print(students)
+
+
+# to update any key value pair we use this variation
+students["bg"] = ["A+", "O+", "AB+"]
+print(students)
+
+students["id"] = [501, 502, 503, 504]
+print(students)
+
+# functions
+students.pop("id")
+print(students)
+
+students.popitem()
+print(students)
+
+
+----------------
+
+# Sets => {}
+empty_set = {}
+print(empty_set)
+print(type(empty_set))
+
+empty_set2 = set()
+print(empty_set)
+print(type(empty_set2))
+
+team = {"Arjun", "Pragnandha", "Gukesh", "Akshay"}
+
+# Operations
+team.add("Vishwnathan Anand")
+print(team)
+
+team.add("Vidhit")
+print(team)
+
+team.add("Divya")
+print(team)
+
+team.remove("Vishwnathan Anand")
+print(team)
+
+# Maths functions
+set1 = {1,2,3,4,5}
+set2 = {1,2,7,8,9}
+
+print(set1.intersection(set2))
+print(set1.union(set2))
+print(set1.symmetric_difference(set2))
+print(set1.difference(set2))
+set3 = {2,7,10, 11, 12}
+
+print(set1 & set2)
+print(set1 | set2)
+print(set1 ^ set2)
+print(set1 - set2)
+
+
+print(set1.union(set2).union(set3))
+print(set1 | set2 | set3)
+print(set1.union(set2) | set3)
+
+
+
+
+
+
+
+
+
+
+
+
+
